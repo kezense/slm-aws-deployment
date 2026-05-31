@@ -22,7 +22,7 @@ The full enterprise architecture (with CI/CD pipelines, multi-AZ networking, WAF
 To achieve a rapid deployment (within days rather than weeks), we will strip back the enterprise layers and focus strictly on the inference path.
 
 ### What is IN Scope (The Pilot):
-- Manual creation of a single `ml.g5.xlarge` Amazon SageMaker Real-Time Endpoint.
+- Manual creation of a single Amazon SageMaker Real-Time Endpoint (GPU instance size scaled based on model parameters).
 - Manual upload of a basic `vLLM` Docker image to ECR.
 - Manual upload of model weights (`.safetensors`) to an S3 bucket.
 - A simple API Gateway (HTTP API) directly invoking the SageMaker endpoint.
@@ -56,7 +56,7 @@ Notice how simplified this architecture is compared to the final enterprise vers
   1. Create an S3 bucket and upload the real custom SLM weights.
   2. Create an ECR repository and push our local Docker image.
   3. Go to the AWS Console → SageMaker → Create Model (using the ECR image and S3 data).
-  4. Create an Endpoint Configuration (1x `ml.g5.xlarge`).
+  4. Create an Endpoint Configuration (1x GPU Instance).
   5. Deploy the Endpoint.
 
 ### Phase 3: The Front Door (Day 3)
