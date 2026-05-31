@@ -22,7 +22,7 @@ The full enterprise architecture (with CI/CD pipelines, multi-AZ networking, WAF
 To achieve a rapid deployment (within days rather than weeks), we will strip back the enterprise layers and focus strictly on the inference path.
 
 ### What is IN Scope (The Pilot):
-- Manual creation of a single Amazon SageMaker Real-Time Endpoint (GPU instance size scaled based on model parameters).
+- Manual creation of a single Amazon SageMaker Real-Time Endpoint (GPU instance selected based on the model's VRAM and parameter requirements).
 - Manual upload of a basic `vLLM` Docker image to ECR.
 - Manual upload of model weights (`.safetensors`) to an S3 bucket.
 - A simple API Gateway (HTTP API) directly invoking the SageMaker endpoint.
