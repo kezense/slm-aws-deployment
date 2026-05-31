@@ -1,4 +1,4 @@
-# 🧠 SLM AWS Deployment Infrastructure
+# SLM AWS Deployment Infrastructure
 
 Welcome to the SLM AWS Deployment repository. This project contains the complete end-to-end architecture, design specifications, and infrastructure configurations necessary for deploying a custom fine-tuned Small Language Model (SLM) securely into an AWS environment.
 
