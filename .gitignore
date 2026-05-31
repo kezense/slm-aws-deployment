@@ -1,0 +1,6 @@
+# Diagram generation scripts
+generate_diagrams.py
+generate_diagrams_extra.py
+
+# Ignored docs
+docs/5_developer_readme.md
