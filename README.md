@@ -12,7 +12,9 @@ The primary goal of this repository is to provide a production-grade, highly sec
 
 ## 📚 Documentation Navigation
 
-The architecture and design strategies are meticulously detailed in the `docs/` directory. For a complete understanding of the system, we recommend reading through them in the following logical order:
+If you are looking for the rapid proof-of-concept strategy to demonstrate functionality before building the full enterprise architecture, please see the **[Pilot SLM Inference Plan](./docs/pilot_project_plan.md)**.
+
+The full enterprise architecture and design strategies are meticulously detailed in the `docs/` directory. For a complete understanding of the system, we recommend reading through them in the following logical order:
 
 | # | Document | Description |
 |---|---|---|
