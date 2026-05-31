@@ -1,6 +1,7 @@
 # Diagram generation scripts
 generate_diagrams.py
 generate_diagrams_extra.py
+generate_pilot_diagram.py
 
 # Ignored docs
 docs/5_developer_readme.md
