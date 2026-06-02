@@ -19,7 +19,7 @@ The full enterprise architecture (with CI/CD pipelines, multi-AZ networking, WAF
 
 ## ⚖️ Scope & Landscape
 
-To achieve a rapid deployment (within days rather than weeks), we will strip back the enterprise layers and focus strictly on the inference path.
+To achieve a rapid deployment (within a 3-week pilot sprint rather than a multi-month rollout), we will strip back the enterprise layers and focus strictly on the inference path.
 
 ### What is IN Scope (The Pilot):
 - Manual creation of a single Amazon SageMaker Real-Time Endpoint (GPU instance selected based on the model's VRAM and parameter requirements).
@@ -44,31 +44,28 @@ Notice how simplified this architecture is compared to the final enterprise vers
 
 ---
 
-## 🏃 Execution Plan (Phase-by-Phase)
+## 🏃 Execution Plan (3-Week Sprint)
 
-### Phase 1: Local Container Validation (Day 1)
+### Phase 1: Local Container Validation & Setup (Week 1)
 - **Goal:** Prove the container works before dealing with AWS.
-- **Action:** Write the `vLLM` Dockerfile. Run the container locally using a dummy model (e.g., a tiny HuggingFace model) to ensure the server starts and responds to HTTP requests.
+- **Action:** Write the `vLLM` Dockerfile. Run the container locally using a dummy model (e.g., a tiny HuggingFace model) to ensure the server starts and responds to HTTP requests. Procure necessary AWS credentials.
 
-### Phase 2: Manual AWS Infrastructure (Day 2)
+### Phase 2: Manual AWS Infrastructure & Deployment (Week 2)
 - **Goal:** Get the model running in the cloud.
 - **Action:** 
   1. Create an S3 bucket and upload the real custom SLM weights.
   2. Create an ECR repository and push our local Docker image.
   3. Go to the AWS Console → SageMaker → Create Model (using the ECR image and S3 data).
-  4. Create an Endpoint Configuration (1x GPU Instance).
-  5. Deploy the Endpoint.
+  4. Create an Endpoint Configuration.
+  5. Deploy the Endpoint and run internal connectivity tests.
 
-### Phase 3: The Front Door (Day 3)
-- **Goal:** Expose the SageMaker endpoint securely to the client.
+### Phase 3: The Front Door & Client Demonstration (Week 3)
+- **Goal:** Expose the endpoint securely and prove success to stakeholders.
 - **Action:**
-  1. Create a simple Lambda function or use direct integration to connect API Gateway to the SageMaker Endpoint.
-  2. Create an API Gateway HTTP API.
-  3. Generate an API Key for the client.
-
-### Phase 4: Client Demonstration (Day 4)
-- **Goal:** Prove success.
-- **Action:** Provide the client with the API Endpoint URL and the API Key. Run a live Postman test showing the input prompt and the generated response, highlighting the latency (Time to First Token).
+  1. Create a simple integration to connect API Gateway to the SageMaker Endpoint.
+  2. Generate an API Key for the client.
+  3. Provide the client with the API Endpoint URL and the API Key. 
+  4. Run a live demonstration showing the input prompt and the generated response, highlighting the latency (Time to First Token).
 
 ---
 

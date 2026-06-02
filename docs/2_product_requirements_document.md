@@ -149,13 +149,13 @@ A **production-grade, secure inference platform** on AWS for serving a client's 
 
 | Category | Metric | Target | Timeline |
 |----------|--------|--------|----------|
-| **Deployment Velocity** | Time from code commit to production | ≤ 30 minutes | End of Production (Week 8) |
-| **Reliability** | Successful deployment rate | ≥ 95% | End of Production (Week 8) |
-| **Performance** | P99 latency under load | ≤ 500ms | End of Pilot (Week 2) |
+| **Deployment Velocity** | Time from code commit to production | ≤ 30 minutes | End of Production (Week 9) |
+| **Reliability** | Successful deployment rate | ≥ 95% | End of Production (Week 9) |
+| **Performance** | P99 latency under load | ≤ 500ms | End of Pilot (Week 3) |
 | **Security** | Zero critical/high CVEs in production images | 0 CVEs | Ongoing |
-| **Cost** | Monthly inference cost per 1M requests | ≤ $500 | End of Production (Week 8) |
-| **Operational** | Mean Time to Recovery (MTTR) | ≤ 15 minutes | End of Production (Week 8) |
-| **Automation** | Manual intervention required per deployment | 0 steps | End of Production (Week 8) |
+| **Cost** | Monthly inference cost per 1M requests | ≤ $500 | End of Production (Week 9) |
+| **Operational** | Mean Time to Recovery (MTTR) | ≤ 15 minutes | End of Production (Week 9) |
+| **Automation** | Manual intervention required per deployment | 0 steps | End of Production (Week 9) |
 
 ---
 
