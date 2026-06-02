@@ -46,26 +46,36 @@ Notice how simplified this architecture is compared to the final enterprise vers
 
 ## 🏃 Execution Plan (3-Week Sprint)
 
-### Phase 1: Local Container Validation & Setup (Week 1)
-- **Goal:** Prove the container works before dealing with AWS.
-- **Action:** Write the `vLLM` Dockerfile. Run the container locally using a dummy model (e.g., a tiny HuggingFace model) to ensure the server starts and responds to HTTP requests. Procure necessary AWS credentials.
+### Phase 1: Requirements & Local Setup (Week 1, Days 1-2)
+- **Goal:** Establish the technical foundation and procure necessary AWS credentials.
+- **Action:** Finalize exact model version and quantization format. Ensure local development environments are authenticated against the target AWS account.
 
-### Phase 2: Manual AWS Infrastructure & Deployment (Week 2)
-- **Goal:** Get the model running in the cloud.
+### Phase 2: Local Container Validation (Week 1, Days 3-5)
+- **Goal:** Prove the container works locally before dealing with AWS.
+- **Action:** Write the `vLLM` Dockerfile. Run the container locally using a dummy model (e.g., a tiny HuggingFace model) to ensure the server starts and successfully responds to HTTP inference requests.
+
+### Phase 3: Cloud Storage & Registry Provisioning (Week 2, Days 1-2)
+- **Goal:** Prepare the AWS environment to hold our artifacts.
 - **Action:** 
-  1. Create an S3 bucket and upload the real custom SLM weights.
-  2. Create an ECR repository and push our local Docker image.
-  3. Go to the AWS Console → SageMaker → Create Model (using the ECR image and S3 data).
-  4. Create an Endpoint Configuration.
-  5. Deploy the Endpoint and run internal connectivity tests.
+  1. Create a secure S3 bucket and upload the real custom SLM weights.
+  2. Create an Amazon ECR repository and push our validated local Docker image.
 
-### Phase 3: The Front Door & Client Demonstration (Week 3)
-- **Goal:** Expose the endpoint securely and prove success to stakeholders.
+### Phase 4: SageMaker Deployment & Tuning (Week 2, Days 3-5)
+- **Goal:** Get the model running and responding in the cloud.
+- **Action:** 
+  1. Navigate to the AWS Console → SageMaker → Create Model (using the ECR image and S3 data).
+  2. Create an Endpoint Configuration targeting the optimal GPU instance.
+  3. Deploy the Endpoint and run internal connectivity and latency tests.
+
+### Phase 5: The Front Door API (Week 3, Days 1-3)
+- **Goal:** Expose the endpoint securely so the client can query it.
 - **Action:**
-  1. Create a simple integration to connect API Gateway to the SageMaker Endpoint.
-  2. Generate an API Key for the client.
-  3. Provide the client with the API Endpoint URL and the API Key. 
-  4. Run a live demonstration showing the input prompt and the generated response, highlighting the latency (Time to First Token).
+  1. Create a simple API Gateway integration (HTTP API) targeting the SageMaker Endpoint.
+  2. Generate a secure API Key and Usage Plan for the client.
+
+### Phase 6: Client Demonstration & Handoff (Week 3, Days 4-5)
+- **Goal:** Prove success to stakeholders and establish next steps.
+- **Action:** Provide the client with the API Endpoint URL and the API Key. Run a live demonstration showing the input prompt and the generated response, highlighting the Time to First Token (TTFT). Discuss the transition to the full Enterprise Architecture.
 
 ---
 
