@@ -3,7 +3,7 @@
 > **Document Version:** 1.0  
 > **Status:** Draft  
 > **Last Updated:** 2026-05-31  
-> **Owner:** SLM Platform Team
+> **Owner:** Ashwin Beryl Kalaichandran
 
 ---
 
