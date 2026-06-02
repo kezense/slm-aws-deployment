@@ -73,9 +73,9 @@ Notice how simplified this architecture is compared to the final enterprise vers
   1. Create a simple API Gateway integration (HTTP API) targeting the SageMaker Endpoint.
   2. Generate a secure API Key and Usage Plan for the client.
 
-### Phase 6: Client Demonstration & Handoff (Week 3)
-- **Goal:** Prove success to stakeholders and establish next steps.
-- **Action:** Provide the client with the API Endpoint URL and the API Key. Run a live demonstration showing the input prompt and the generated response, highlighting the Time to First Token (TTFT). Discuss the transition to the full Enterprise Architecture.
+### Phase 6: Pilot Completion & Enterprise Upgrade Planning (Week 3)
+- **Goal:** Prove pilot success to stakeholders and seamlessly transition into production planning.
+- **Action:** Provide the client with the temporary Pilot API Endpoint URL and API Key. Run a live demonstration showing the input prompt and the generated response, highlighting the Time to First Token (TTFT). Formally conclude the pilot sprint and initiate planning for the Enterprise Architecture upgrade.
 
 ---
 
